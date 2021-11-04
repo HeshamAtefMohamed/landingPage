@@ -1,2 +1,0 @@
-# myFirstProject
-Landing project
