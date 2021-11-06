@@ -1,22 +1,42 @@
-/**
- * 
- * Manipulating the DOM exercise.
- * Exercise programmatically builds navigation,
- * scrolls to anchors from navigation,
- * and highlights section in viewport upon scrolling.
- * 
- * Dependencies: None
- * 
- * JS Version: ES2015/ES6
- * 
- * JS Standard: ESlint
- * 
-*/
+// Build navigation bar in ul 
 
-/**
- * Comments should be present at the beginning of each procedure and class.
- * Great to have comments before crucial code sections within the procedure.
-*/
+//start by call ul by id 
+const navBar=document.getElementById("navbar__list");
+
+//call the sections to iterate the navBarBuilder function over them
+const sections=document.querySelectorAll("section");
+
+// declaring the function 
+function navBarBuilder(){
+
+//looping over the sections using for of 
+for(section of sections){
+    
+        // create navigition items by li
+            const navItem=document.createElement("li");
+        /* Build innerHtml text fot li 
+        Create the hyperlinks using anchor tag and href which indicates the link's destination*/
+        
+        //first get anchor id and name
+            const itemLink=section.getAttribute("id");
+            const itemName=section.getAttribute("data-nav");
+        //second build innerHtml for li
+        /*
+        href is the item link
+        menu_link is a styling class for navItems"menu_links"
+        # to makes href navigate in the same page
+        ${ to take the variable
+        ` for interprating the text as a link
+        */
+            navItem.innerHTML=`<a class="menu__link" href="#${itemLink}">${itemName}</a>` ;
+        //append li to ul
+            navBar.appendChild(navItem);
+};
+};
+    //build the navBar
+    navBarBuilder();
+
+//Second 
 
 /**
  * Define Global Variables
