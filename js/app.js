@@ -42,38 +42,41 @@ for(section of sections){
     //build the navBar
     navBarBuilder();
 
-//Second determine the active section "in viewport"
+//Second determine the active section "the section in viewport"
 
 // determine which section is in viewport
 
-//Build the viewport function to check which elemnt is in viewport and active
-    const isInViewport= function () {
-        sections.forEach(function section() {
+//Build the viewport function to check which section is in viewport and active
+    const isInViewport= function (section) {
             //use section.getBoundingClientRect() method to determine section position from all dimensions in the viewoirt
             const bounding = section.getBoundingClientRect();
             return (
                 bounding.top >= 0 &&
                 bounding.left >= 0 &&
-                bounding.bottom <= window.innerHeight &&
+                bounding.bottom <=110 &&
                 bounding.right <= window.innerWidth
             );
-        });  
-    };
+        };  
+    
 
 // build a function to give the active class style to section in viewport
 
 const activeClass = ()=>{
-    if(isInViewport){
-        section.classlist.add("your-active-class");
-    }
-    else{
-        section.classlist.remove("your-active-class");    
-    }
+    //looping over sections and give active class to section in viewport
+    for(section of sections){
+        //condition to detect which section is in the viewport
+        if(isInViewport){ 
+        //add active class if condition is true 
+        section.classList.add("your-active-class");
+        }
+        else{
+        // remove active class if condition is false
+        section.classList.remove("your-active-class");    
+        }
+    };
 };
 // build the event that when scroll in the window the section in the viewport take the active class
     window.addEventListener("scroll", activeClass);
-
-
 
 
 
