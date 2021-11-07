@@ -1,10 +1,15 @@
+// global variables
+const sections=document.querySelectorAll("section");
+
+//
+
+
 // Build navigation bar in ul 
 
 //start by call ul by id 
-const navBar=document.getElementById("navbar__list");
+    const navBar=document.getElementById("navbar__list");
 
 //call the sections to iterate the navBarBuilder function over them
-const sections=document.querySelectorAll("section");
 
 // declaring the function 
 function navBarBuilder(){
@@ -22,6 +27,7 @@ for(section of sections){
             const itemName=section.getAttribute("data-nav");
         //second build innerHtml for li
         /*
+        the template literal technique
         href is the item link
         menu_link is a styling class for navItems"menu_links"
         # to makes href navigate in the same page
@@ -36,7 +42,41 @@ for(section of sections){
     //build the navBar
     navBarBuilder();
 
-//Second 
+//Second determine the active section "in viewport"
+
+// determine which section is in viewport
+
+//Build the viewport function to check which elemnt is in viewport and active
+    const isInViewport= function () {
+        sections.forEach(function section() {
+            //use section.getBoundingClientRect() method to determine section position from all dimensions in the viewoirt
+            const bounding = section.getBoundingClientRect();
+            return (
+                bounding.top >= 0 &&
+                bounding.left >= 0 &&
+                bounding.bottom <= window.innerHeight &&
+                bounding.right <= window.innerWidth
+            );
+        });  
+    };
+
+// build a function to give the active class style to section in viewport
+
+const activeClass = ()=>{
+    if(isInViewport){
+        section.classlist.add("your-active-class");
+    }
+    else{
+        section.classlist.remove("your-active-class");    
+    }
+};
+// build the event that when scroll in the window the section in the viewport take the active class
+    window.addEventListener("scroll", activeClass);
+
+
+
+
+
 
 /**
  * Define Global Variables
