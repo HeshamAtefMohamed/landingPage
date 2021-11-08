@@ -3,7 +3,6 @@ const sections=document.querySelectorAll("section");
 
 //
 
-
 // Build navigation bar in ul 
 
 //start by call ul by id 
@@ -34,7 +33,7 @@ for(section of sections){
         ${ to take the variable
         ` for interprating the text as a link
         */
-            navItem.innerHTML=`<a class="menu__link" href="#${itemLink}">${itemName}</a>` ;
+        navItem.innerHTML=`<a class="menu__link" href="#${itemLink}">${itemName}</a>` ;
         //append li to ul
             navBar.appendChild(navItem);
 };
@@ -78,11 +77,27 @@ const activeClass = ()=>{
 // build the event that when scroll in the window the section in the viewport take the active class
     window.addEventListener("scroll", activeClass);
 
+//Third build an event when clicking on a navkink on navBar ,the link should scroll smoothly to the appropiate section
 
+//First build scrollTosec fun
 
+const scrollToSec= function(event){
+
+    navbar.forEach(function (){
+
+    // for preventing the default scrolling
+        event.preventDefault();
+    // add scrolling event and make it smoothly
+        navbar.itemLink.scrollIntoView({behavior:"smooth", block:"center"});
+    });
+    
+}
+
+navBar.itemLink.addEventListener("click",scrollToSec);
 
 /**
  * Define Global Variables
+ * 
  * 
 */
 
@@ -121,5 +136,4 @@ const activeClass = ()=>{
 // Scroll to section on link click
 
 // Set sections as active
-
 
