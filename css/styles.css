@@ -90,7 +90,7 @@ section {
 
 /* Header Styles */
 .page__header {
-    background: #fff;
+    background: rgb(119, 122, 122);
     position: fixed;
     top: 0;
     width: 100%;
@@ -221,3 +221,5 @@ section.your-active-class .landing__container::after {
 		           rotate(-360deg);
 	}
 }
+
+HTML{scroll-behavior: smooth}
