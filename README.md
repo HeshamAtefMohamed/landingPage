@@ -1,13 +1,21 @@
-# Landing Page Project
+it's required to build navigation bar through  three steps
 
-## Table of Contents
+First:
+ Build navigation bar
+ by using dom by creating tags, appendChilds and iterating the the function which creates sections over the sections
 
-* [Instructions](#instructions)
 
-## Instructions
+Second:
+which section is active while scrolling
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+third: 
+to make smoothly scroll
 
-To get started, open `js/app.js` and start building out the app's functionality
+I have searched and use refences like the following:
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+https://www.javascripttutorial.net/dom/css/check-if-an-element-is-visible-in-the-viewport/
+https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener
+https://developer.mozilla.org/en-US/docs/Web/API/Element/classList#Methods
+https://www.javascripttutorial.net/javascript-dom/javascript-scrollintoview/
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+in addition to the great help of FWD community
