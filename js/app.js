@@ -1,9 +1,23 @@
 // global variables
 const sections=document.querySelectorAll("section");
-
 //
 
-// Build navigation bar in ul 
+//First build scrollTosec fun that prevents default scrolling and makes it smooth
+
+const scrollToSec= function(event){
+
+    Sections.forEach(function (){
+
+    // for preventing the default scrolling
+        event.preventDefault();
+    // add scrolling event and make it smoothly
+        section.scrollIntoView({behavior:"smooth", block:"centre"});
+    });
+    
+};
+
+
+//second Build navigation bar in ul 
 
 //start by call ul by id 
     const navBar=document.getElementById("navbar__list");
@@ -41,7 +55,7 @@ for(section of sections){
     //build the navBar
     navBarBuilder();
 
-//Second determine the active section "the section in viewport"
+//third determine the active section "the section in viewport"
 
 // determine which section is in viewport
 
@@ -77,63 +91,4 @@ const activeClass = ()=>{
 // build the event that when scroll in the window the section in the viewport take the active class
     window.addEventListener("scroll", activeClass);
 
-//Third build an event when clicking on a navkink on navBar ,the link should scroll smoothly to the appropiate section
-
-//First build scrollTosec fun
-
-const scrollToSec= function(event){
-
-    navbar.forEach(function (){
-
-    // for preventing the default scrolling
-        event.preventDefault();
-    // add scrolling event and make it smoothly
-        navbar.itemLink.scrollIntoView({behavior:"smooth", block:"center"});
-    });
-    
-}
-
-navBar.itemLink.addEventListener("click",scrollToSec);
-
-/**
- * Define Global Variables
- * 
- * 
-*/
-
-
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-
-
-/**
- * End Helper Functions
- * Begin Main Functions
- * 
-*/
-
-// build the nav
-
-
-// Add class 'active' to section when near top of viewport
-
-
-// Scroll to anchor ID using scrollTO event
-
-
-/**
- * End Main Functions
- * Begin Events
- * 
-*/
-
-// Build menu 
-
-// Scroll to section on link click
-
-// Set sections as active
 
